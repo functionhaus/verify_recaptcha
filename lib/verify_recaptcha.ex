@@ -1,12 +1,15 @@
 defmodule VerifyRecaptcha do
   @moduledoc """
-  Documentation for VerifyRecaptcha.
+  VerifyRecaptcha is a simple Plug module for verifying input from a Recaptcha
+  instance and passing back a structured response.
   """
 
   import ConnArtist, only: [halt_json: 3]
 
+  @spec init(%{}) :: %{}
   def init(opts), do: opts
 
+  @spec call(%Plug.Conn{}, any()) :: %Plug.Conn{}
   def call(conn, _) do
     recaptcha = conn.params
     |> Map.get("recaptcha")
@@ -19,6 +22,7 @@ defmodule VerifyRecaptcha do
     end
   end
 
+  @spec error(binary()) :: %{required(binary()) => [binary()]}
   defp error(msg) do
     %{"recaptcha" => [msg]}
   end

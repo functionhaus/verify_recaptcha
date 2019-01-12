@@ -40,7 +40,8 @@ defmodule VerifyRecaptcha.MixProject do
      {:recaptcha, "~> 2.3"},
      {:conn_artist, "~> 0.0"},
      {:meck, "~> 0.8", only: :test},
-     {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+     {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+     {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
 
