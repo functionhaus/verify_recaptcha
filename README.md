@@ -1,6 +1,7 @@
 # VerifyRecaptcha
 
-VerifyRecaptcha consists of a single Plug module
+VerifyRecaptcha is a simple Plug module for verifying input from a Recaptcha
+instance and passing back a structured response.
 
 ## Installation
 
